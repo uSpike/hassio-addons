@@ -1,0 +1,14 @@
+{
+  "build_from": {
+    "amd64": "homeassistant/amd64-base:3.11",
+    "i386": "homeassistant/i386-base:3.11",
+    "armhf": "homeassistant/armhf-base:3.11",
+    "armv7": "homeassistant/armv7-base:3.11",
+    "aarch64": "homeassistant/aarch64-base:3.11"
+  },
+  "args": {
+    "SNAPCAST_VERSION": "01e7778b9a7a1cb95a291b0cddcd69934386d581",
+    "SNAPWEB_VERSION": "01e7778b9a7a1cb95a291b0cddcd69934386d581",
+    "LIBRESPOT_VERSION": "e8ec5feb2260e9d2e3b8bfc927cc5211d626e015"
+  }
+}
