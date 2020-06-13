@@ -1,6 +1,6 @@
 {
   "name": "Snapserver",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "slug": "snapserver",
   "description": "Snapcast server",
   "url": "https://github.com/uspike/selleronom/hassio-addons/tree/master/snapserver",
@@ -12,16 +12,7 @@
   "hassio_api": true,
   "hassio_role": "default",
   "host_dbus": true,
-  "ports": {
-    "1704/tcp": 1704,
-    "1705/tcp": 1705,
-    "1780/tcp": 1780
-  },
-  "ports_description": {
-    "1704/tcp": "Snapcast server port",
-    "1705/tcp": "Snapcast TCP control port (set empty to disable)",
-    "1780/tcp": "Snapcast HTTP control port (set empty to disable)"
-  },
+  "host_network": true,
   "map": ["share:rw"],
   "options": {
     "stream": {
