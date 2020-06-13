@@ -11,7 +11,7 @@ RUN apk add --no-cache \
     portaudio-dev \
     protobuf-dev
 
-ARG LIBRESPOT_VERSION=e8ec5feb2260e9d2e3b8bfc927cc5211d626e015
+ARG LIBRESPOT_VERSION
 
 RUN git clone https://github.com/librespot-org/librespot.git librespot \
  && cd librespot \
@@ -36,7 +36,7 @@ RUN apk add --no-cache \
     alsa-lib-dev \
     opus-dev
 
-ARG SNAPCAST_VERSION=01e7778b9a7a1cb95a291b0cddcd69934386d581
+ARG SNAPCAST_VERSION
 
 RUN git clone https://github.com/badaix/snapcast.git snapcast \
  && cd snapcast \
@@ -53,13 +53,13 @@ RUN git clone https://github.com/badaix/snapcast.git snapcast \
  && make -C build -j $(( $(nproc) + 1 )) snapserver \
  && cp bin/snapserver /usr/bin/snapserver
 
-ARG SNAPWEB_VERSION=c82213ccb514f71aee568d2e2d8d2e9b34716dea
+ARG SNAPWEB_VERSION
 
 RUN git clone https://github.com/badaix/snapweb.git snapweb \
  && cd snapweb \
  && git checkout ${SNAPWEB_VERSION} \
  && rm -rf /var/www \
- && cp -R page /var/www
+ && ln -s $(pwd)/page /var/www
 
 COPY --from=librespot /usr/bin/librespot /usr/bin/librespot
 
