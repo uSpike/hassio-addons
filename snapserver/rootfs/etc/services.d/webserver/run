@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Runs a webserver
+# ==============================================================================
+
+bashio::log.info "Starting Webserver..."
+
+exec python3 -m http.server --directory /var/www 8099

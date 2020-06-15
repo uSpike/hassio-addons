@@ -1,6 +1,6 @@
 {
   "name": "Snapserver",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "slug": "snapserver",
   "description": "Snapcast server",
   "url": "https://github.com/uspike/selleronom/hassio-addons/tree/master/snapserver",
@@ -17,7 +17,7 @@
   "options": {
     "stream": {
       "streams": [
-        "spotify://librespot?name=Spotify&username=<USERNAME>&password=<PASSWORD>&devicename=Snapcast&bitrate=320"
+        "librespot://librespot?name=Spotify&username=<USERNAME>&password=<PASSWORD>&devicename=Snapcast&bitrate=320"
       ],
       "buffer": "1000",
       "codec": "flac",
@@ -26,13 +26,6 @@
     },
     "tcp": {
       "enabled": "true"
-    },
-    "logging": {
-      "enabled": "false"
-    },
-    "server": {
-      "threads": "-1",
-      "datadir": "/share/snapcast/"
     }
   },
   "schema": {
@@ -44,14 +37,13 @@
       "sampleformat": "str"
     },
     "tcp": {
-      "enabled": "str"
+      "enabled": "str?"
     },
     "logging": {
-      "enabled": "str"
+      "enabled": "str?"
     },
     "server": {
-      "threads": "int",
-      "datadir": "str"
+      "threads": "int?"
     }
   }
 }

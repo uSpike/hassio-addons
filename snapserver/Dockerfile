@@ -55,6 +55,8 @@ RUN git clone https://github.com/badaix/snapcast.git snapcast \
 
 ARG SNAPWEB_VERSION
 
+RUN apk add --no-cache python3
+
 RUN git clone https://github.com/badaix/snapweb.git snapweb \
  && cd snapweb \
  && git checkout ${SNAPWEB_VERSION} \
