@@ -59,9 +59,7 @@ RUN apk add --no-cache python3
 
 RUN git clone https://github.com/badaix/snapweb.git snapweb \
  && cd snapweb \
- && git checkout ${SNAPWEB_VERSION} \
- && rm -rf /var/www \
- && ln -s $(pwd)/page /var/www
+ && git checkout ${SNAPWEB_VERSION}
 
 COPY --from=librespot /usr/bin/librespot /usr/bin/librespot
 
