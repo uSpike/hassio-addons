@@ -41,7 +41,7 @@ echo "sampleformat = ${CONF_SAMPLEFORMAT}" >> "${CONFIG_FILE}"
 
 echo "[http]" >> "${CONFIG_FILE}"
 echo "enabled = true" >> "${CONFIG_FILE}"
-echo "port = 8099" >> "${CONFIG_FILE}"
+echo "port = 1780" >> "${CONFIG_FILE}"
 echo "doc_root = /usr/src/snapweb/page" >> "${CONFIG_FILE}"
 
 echo "[tcp]" >> "${CONFIG_FILE}"
