@@ -1,9 +1,8 @@
 {
   "name": "Snapserver",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "slug": "snapserver",
   "description": "Snapcast server",
-  "image": "uspike/hassio-addon-snapserver-{arch}",
   "url": "https://github.com/uspike/hassio-addons/",
   "ingress": true,
   "ingress_entry": "index.html",
