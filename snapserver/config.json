@@ -1,9 +1,9 @@
 {
   "name": "Snapserver",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "slug": "snapserver",
   "description": "Snapcast server",
-  "url": "https://github.com/uspike/selleronom/hassio-addons/tree/master/snapserver",
+  "url": "https://github.com/uspike/hassio-addons/",
   "ingress": true,
   "ingress_entry": "index.html",
   "startup": "services",
@@ -12,38 +12,28 @@
   "hassio_api": true,
   "hassio_role": "default",
   "host_dbus": true,
-  "host_network": true,
+  "ports": {
+    "1704/tcp": 1704,
+    "1705/tcp": 1705
+  },
+  "ports_description": {
+    "1704/tcp": "Snapcast server port",
+    "1705/tcp": "Snapcast TCP control port (set empty to disable)"
+  },
   "map": ["share:rw"],
   "options": {
     "stream": {
       "streams": [
-        "librespot://librespot?name=Spotify&username=<USERNAME>&password=<PASSWORD>&devicename=Snapcast&bitrate=320"
-      ],
-      "buffer": "1000",
-      "codec": "flac",
-      "send_to_muted": "false",
-      "sampleformat": "48000:16:2"
-    },
-    "tcp": {
-      "enabled": "true"
+      ]
     }
   },
   "schema": {
     "stream": {
       "streams": ["str"],
-      "buffer": "int",
-      "codec": "str",
-      "send_to_muted": "str",
-      "sampleformat": "str"
-    },
-    "tcp": {
-      "enabled": "str?"
-    },
-    "logging": {
-      "enabled": "str?"
-    },
-    "server": {
-      "threads": "int?"
+      "buffer": "int?",
+      "codec": "str?",
+      "send_to_muted": "str?",
+      "sampleformat": "str?"
     }
   }
 }
