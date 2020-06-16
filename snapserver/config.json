@@ -1,14 +1,15 @@
 {
   "name": "Snapserver",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "slug": "snapserver",
   "description": "Snapcast server",
+  "image": "uspike/hassio-addon-snapserver-{arch}",
   "url": "https://github.com/uspike/hassio-addons/",
   "ingress": true,
   "ingress_entry": "index.html",
   "ingress_port": 1780,
   "startup": "services",
-  "arch": ["amd64", "i386", "armhf", "armv7", "aarch64"],
+  "arch": ["amd64"],
   "boot": "auto",
   "hassio_api": true,
   "hassio_role": "default",
@@ -19,9 +20,9 @@
     "1780/tcp": 1780
   },
   "ports_description": {
-    "1704/tcp": "Snapcast server port",
-    "1705/tcp": "Snapcast TCP control port (set empty to disable)",
-    "1780/tcp": "Snapcast HTTP control port"
+    "1704/tcp": "Snapcast server",
+    "1705/tcp": "Snapcast TCP control",
+    "1780/tcp": "Snapcast HTTP/Websocket control"
   },
   "map": ["share:rw"],
   "options": {
