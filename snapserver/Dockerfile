@@ -59,8 +59,9 @@ RUN apk add --no-cache python3
 
 RUN git clone https://github.com/badaix/snapweb.git snapweb \
  && cd snapweb \
- && git checkout ${SNAPWEB_VERSION} \
- && sed -i 's/1780/8099/g' page/script.js
+ && git checkout ${SNAPWEB_VERSION}
+COPY patches/snapweb /usr/src/snapweb/patches
+RUN cd /usr/src/snapweb && git apply patches/0001-Change-path.patch
 
 COPY --from=librespot /usr/bin/librespot /usr/bin/librespot
 

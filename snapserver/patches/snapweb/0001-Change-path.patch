@@ -1,0 +1,31 @@
+From ee09ce40a6bbe19fb63d666befa5f0fa0c0a49ec Mon Sep 17 00:00:00 2001
+From: Jordan Speicher <jordan@jspeicher.com>
+Date: Tue, 16 Jun 2020 23:28:37 -0500
+Subject: [PATCH] Change path
+
+---
+ page/script.js | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/page/script.js b/page/script.js
+index 802b45c..4112ad2 100644
+--- a/page/script.js
++++ b/page/script.js
+@@ -255,7 +255,7 @@ class SnapControl {
+         }
+     }
+ }
+-let snapcontrol = new SnapControl(window.location.hostname, 1780);
++let snapcontrol = new SnapControl(window.location.href + "/jsonrpc", 80);
+ //let snapcontrol = new SnapControl("192.168.0.3", 1780);
+ let hide_offline = false;
+ function show() {
+@@ -547,4 +547,3 @@ window.onclick = function (event) {
+         modal.style.display = "none";
+     }
+ };
+-//# sourceMappingURL=script.js.map
+\ No newline at end of file
+-- 
+2.25.1
+
