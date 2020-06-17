@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Runs snapserver
+# ==============================================================================
+bashio::log.info 'Starting nginx...'
+
+mkdir -p /run/nginx
+
+# Run snapserver
+exec nginx
