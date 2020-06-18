@@ -1,4 +1,4 @@
-From 30437a0c8facf5d500a917dc519dedd910e7e656 Mon Sep 17 00:00:00 2001
+From 6baf96fe4b563de930f728c39edfbc5592c34166 Mon Sep 17 00:00:00 2001
 From: Jordan Speicher <jordan@jspeicher.com>
 Date: Tue, 16 Jun 2020 23:28:37 -0500
 Subject: [PATCH] Change path
@@ -8,7 +8,7 @@ Subject: [PATCH] Change path
  1 file changed, 3 insertions(+), 4 deletions(-)
 
 diff --git a/page/script.js b/page/script.js
-index 802b45c..2064316 100644
+index 802b45c..039bd9b 100644
 --- a/page/script.js
 +++ b/page/script.js
 @@ -113,9 +113,9 @@ class Server {
@@ -28,7 +28,7 @@ index 802b45c..2064316 100644
      }
  }
 -let snapcontrol = new SnapControl(window.location.hostname, 1780);
-+let snapcontrol = new SnapControl('ws://' + window.location.host + window.location.pathname.split('/').slice(0, -1) + '/jsonrpc');
++let snapcontrol = new SnapControl('ws://' + window.location.host + window.location.pathname.split('/').slice(0, -1).join('/') + '/jsonrpc');
  //let snapcontrol = new SnapControl("192.168.0.3", 1780);
  let hide_offline = false;
  function show() {
