@@ -65,5 +65,7 @@ RUN cd /usr/src/snapweb && git apply patches/0001-Change-path.patch
 
 COPY --from=librespot /usr/bin/librespot /usr/bin/librespot
 
+RUN apk add --no-cache mpd
+
 WORKDIR /
 COPY rootfs /
