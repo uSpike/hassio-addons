@@ -5,4 +5,4 @@
 bashio::log.info 'Starting mpd...'
 
 # Run mpd
-exec mpd
+exec mpd --no-daemon
